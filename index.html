@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random HTML Page Template</title>
+    <style>
+        /* General page layout and background */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #74abe2, #5563c1);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Card container styling */
+        .card {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #4a54e1;
+        }
+
+        p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* Interactive button styling */
+        .btn {
+            background-color: #4a54e1;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.1s ease;
+            margin-top: 15px;
+        }
+
+        .btn:hover {
+            background-color: #353eb8;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        /* Dynamic content area */
+        #display-area {
+            font-style: italic;
+            font-weight: bold;
+            min-height: 50px;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Content Area -->
+    <div class="card">
+        <h1>Welcome to My Page</h1>
+        <p>This is a random snippet of functional HTML, styled with CSS, and driven by JavaScript.</p>
+        
+        <div id="display-area">
+            "Click the button below to load a random idea."
+        </div>
+
+        <button class="btn" onclick="generateIdea()">Generate New Idea</button>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Array of random data to cycle through
+        const ideas = [
+            "\"Learn a new HTML tag today, like &lt;details&gt; or &lt;dialog&gt;.\"",
+            "\"Take a 5-minute break and stretch your wrists.\"",
+            "\"Drink a glass of water before you write your next line of code.\"",
+            "\"Clean up your CSS files by removing unused rules.\"",
+            "\"Test your website on a mobile screen size to ensure layout stability.\"",
+            "\"Commit your recent changes to git before trying something risky.\""
+        ];
+
+        // Function to select and display a random item from the array
+        function generateIdea() {
+            const displayArea = document.getElementById('display-area');
+            
+            // Generate random index based on array length
+            const randomIndex = Math.floor(Math.random() * ideas.length);
+            
+            // Inject the string safely into the document
+            displayArea.innerHTML = ideas[randomIndex];
+        }
+    </script>
+
+</body>
+</html>
